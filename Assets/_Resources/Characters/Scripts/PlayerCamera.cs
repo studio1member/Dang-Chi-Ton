@@ -44,10 +44,7 @@ public class PlayerCamera : MonoBehaviour
         //{
         //    Debug.Log("Error");
         //}
-        if (Physics.Raycast(player.camera03.position, Vector3.down, 1f, player.layerGround))
-        {
-            Debug.Log("Error");
-        }
+        
     }
     private void OnDrawGizmos()
     {
