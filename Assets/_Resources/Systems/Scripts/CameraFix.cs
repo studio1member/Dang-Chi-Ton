@@ -5,8 +5,8 @@ using UnityEngine;
 public class CameraFix : MonoBehaviour
 {
     private Player player;
-    private bool checkVar;
-    [SerializeField] private float speed;
+    [SerializeField] private bool checkVar;
+    [SerializeField] private float speed = 1f;
     private void Start()
     {
         player = Player.instance.GetComponent<Player>();
@@ -16,7 +16,6 @@ public class CameraFix : MonoBehaviour
         if (other.gameObject.CompareTag("Ground") || other.gameObject.CompareTag("Wall"))
         {
             checkVar = true;
-            speed = 1f;
         }
     }
     private void OnTriggerExit(Collider other)
@@ -24,18 +23,18 @@ public class CameraFix : MonoBehaviour
         if (other.gameObject.CompareTag("Ground") || other.gameObject.CompareTag("Wall"))
         {
             checkVar = false;
-            speed = 0f;
         }
     }
     private void Update()
     {
+        float direction = Vector3.Distance(transform.position, player.cameraMain.position);
         if (checkVar)
         {
-            
+            if (direction > 1f && player.zoom) player.camera03.position = Vector3.MoveTowards(transform.position, player.cameraMain.position, speed * Time.deltaTime);
         }
         else
         {
-
+            if (direction < 4.5f && !player.zoom) player.camera03.position = Vector3.MoveTowards(transform.position, player.cameraMain.position, -1 * speed * Time.deltaTime);
         }
     }
 }

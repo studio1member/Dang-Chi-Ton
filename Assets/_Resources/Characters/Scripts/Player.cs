@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
     public LayerMask Enemy;
 
     [Header("Camera")]
+    public bool zoom;
     public Transform cameraMain;
     public Transform look;
     public Transform camera01;
@@ -31,7 +32,7 @@ public class Player : MonoBehaviour
     public float moveSpeeMax = 14;
     public float moveSpeed;
     public float air = 0.5f;
-    public float drag = 4f;
+    public float drag = 5f;
 
     [Header("Jump")]
     public LayerMask layerGround;
