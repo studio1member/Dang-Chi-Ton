@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Status : MonoBehaviour
 {
-    private Rigidbody rb;
+    public Rigidbody rb;
     [Header("Damage")]
     public float Damage = 10f;
 

@@ -32,9 +32,8 @@ public class PlayerCtrl : MonoBehaviour
         _Speed_Up();
 
         player.checkGround = Physics.Raycast(transform.position, Vector3.down, directionCheck + 1f, player.layerGround);
-
-        if (player.checkGround) player.anim.SetBool("Jump", false);
-        else player.anim.SetBool("Jump", true);
+        float jumpf = player.rb.velocity.y;
+        player.anim.SetFloat(player.jumpAnim, jumpf);
     }
     private void _Move()
     {
@@ -54,8 +53,8 @@ public class PlayerCtrl : MonoBehaviour
     }
     private void _Animation()
     {
-        player.anim.SetFloat("Speed", player.rb.velocity.magnitude);
-        player.anim.SetFloat("Jumpf", player.rb.velocity.y);
+        player.anim.SetFloat(player.moveAnim, player.rb.velocity.magnitude);
+        //player.anim.SetFloat(player.jumpfAnim, player.rb.velocity.y);
     }
     private void _Limit_Speed()
     {

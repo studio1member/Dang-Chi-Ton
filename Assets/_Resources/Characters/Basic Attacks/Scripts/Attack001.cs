@@ -8,7 +8,7 @@ public class Attack001 : AttackSystem
     [SerializeField] private Vector3 direction = Vector3.forward;
     public override void _Mouse_Left()
     {
-        player.anim.SetTrigger("Attack01");
+        player.anim.SetTrigger(player.attackAnim);
         RaycastHit[] hits = Physics.SphereCastAll(transform.position, radius, direction, distance, player.Enemy);
         foreach (RaycastHit hit in hits)
         {

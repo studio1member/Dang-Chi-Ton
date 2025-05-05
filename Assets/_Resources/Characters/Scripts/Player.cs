@@ -38,6 +38,11 @@ public class Player : MonoBehaviour
     public LayerMask layerGround;
     public float jumpForce = 6f;
 
+    [Header("Animation")]
+    public string moveAnim = "Move";
+    public string jumpAnim = "Jump";
+    public string attackAnim = "Attack01";
+
     private void Awake()
     {
         moveSpeed = moveSpeedBasic;
