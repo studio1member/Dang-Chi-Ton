@@ -7,7 +7,7 @@ public class AttackSystem : MonoBehaviour
     public Player player;
     virtual public void Start()
     {
-        player = Player.instance.GetComponent<Player>();
+        player = GetComponent<Player>();
     }
     virtual public void Update()
     {

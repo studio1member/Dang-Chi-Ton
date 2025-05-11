@@ -5,13 +5,17 @@ using System.Linq;
 
 public class Player : MonoBehaviour
 {
-    public static Player instance;
-    public Status status;
-
     [Header("Component")]
+    public Transform playerParent;
     public Rigidbody rb;
     public Animator anim;
     public LayerMask Enemy;
+
+    public GameObject playerScripts;
+    public PlayerCtrl playerCtrl;
+    public PlayerCamera playerCamera;
+    public PlayerStatus playerStatus;
+    public AttackSystem attacksSystem;
 
     [Header("Camera")]
     public bool zoom;
@@ -28,14 +32,15 @@ public class Player : MonoBehaviour
     [Header("Move")]
     public bool checkGround;
     public bool checkWall;
-    public float moveSpeedBasic = 7f;
-    public float moveSpeeMax = 14;
+    public float moveSpeedBasic = 5f;
+    public float moveSpeeMax = 10;
     public float moveSpeed;
-    public float air = 0.5f;
+    public float air = 0.3f;
     public float drag = 5f;
 
     [Header("Jump")]
     public LayerMask layerGround;
+    public int jumpContinuously = 10;
     public float jumpForce = 6f;
 
     [Header("Animation")]
@@ -46,25 +51,5 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         moveSpeed = moveSpeedBasic;
-        instance = this;
-        rb = GetComponent<Rigidbody>();
-        foreach (Transform t in transform) if (t.name == "Model") anim = t.GetComponent<Animator>();
-        status = GetComponent<Status>();
-        _Awake_Camera();
-    }
-    private void _Awake_Camera()
-    {
-        foreach (Transform child in GetComponentsInChildren<Transform>())
-        {
-            if (child.name == "Camera Main") cameraMain = child;
-            if (child.name == "Look") look = child;
-            if (child.name == "Camera01") camera01 = child;
-            if (child.name == "Camera02") camera02 = child;
-            if (child.name == "Camera03") camera03 = child;
-            if (child.name == "Main Camera"){
-                mainCamera = child;
-                break;
-            }
-        }
     }
 }

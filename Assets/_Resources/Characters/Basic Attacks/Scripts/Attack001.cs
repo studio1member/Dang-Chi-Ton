@@ -12,7 +12,7 @@ public class Attack001 : AttackSystem
         RaycastHit[] hits = Physics.SphereCastAll(transform.position, radius, direction, distance, player.Enemy);
         foreach (RaycastHit hit in hits)
         {
-            hit.collider.GetComponent<Status>()._Dame_Receiver(player.status.Damage, true, transform, knockBack);
+            //hit.collider.GetComponent<Status>()._Dame_Receiver(player.status.Damage, true, transform, knockBack);
         }
         base._Mouse_Left();
     }

@@ -14,7 +14,7 @@ public class PlayerCamera : MonoBehaviour
 
     private void Start()
     {
-        player = Player.instance.GetComponent<Player>();
+        player = GetComponent<Player>();
         player.cameraMain.SetParent(null);
         Cursor.lockState = CursorLockMode.Locked;
     }

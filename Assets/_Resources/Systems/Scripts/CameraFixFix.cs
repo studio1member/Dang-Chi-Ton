@@ -7,7 +7,7 @@ public class CameraFixFix : MonoBehaviour
     Player player;
     private void Start()
     {
-        player = Player.instance.GetComponent<Player>();
+        GetComponent<Player>();
     }
     private void OnTriggerEnter(Collider other)
     {

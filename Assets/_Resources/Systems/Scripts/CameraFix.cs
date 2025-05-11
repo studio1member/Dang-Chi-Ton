@@ -4,13 +4,9 @@ using UnityEngine;
 
 public class CameraFix : MonoBehaviour
 {
-    private Player player;
+    [SerializeField] private Player player;
     [SerializeField] private bool checkVar;
     [SerializeField] private float speed = 1f;
-    private void Start()
-    {
-        player = Player.instance.GetComponent<Player>();
-    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Ground") || other.gameObject.CompareTag("Wall"))

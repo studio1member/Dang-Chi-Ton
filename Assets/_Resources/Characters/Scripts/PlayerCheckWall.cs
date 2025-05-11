@@ -4,11 +4,7 @@ using UnityEngine;
 
 public class PlayerCheckWall : MonoBehaviour
 {
-    private Player player;
-    private void Start()
-    {
-        player = Player.instance.GetComponent<Player>();
-    }
+    [SerializeField] private Player player;
     private void OnTriggerEnter(Collider other)
     {
         if (((1 << other.gameObject.layer) & player.layerGround) != 0)
