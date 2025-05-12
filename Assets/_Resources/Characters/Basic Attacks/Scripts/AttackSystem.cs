@@ -5,10 +5,6 @@ using UnityEngine;
 public class AttackSystem : MonoBehaviour
 {
     public Player player;
-    virtual public void Start()
-    {
-        player = GetComponent<Player>();
-    }
     virtual public void Update()
     {
         if (Input.GetMouseButtonDown(0)) _Mouse_Left_Down();
@@ -27,5 +23,5 @@ public class AttackSystem : MonoBehaviour
     virtual public void _Mouse_Right() { _Look(); }
     virtual public void _Mouse_Right_Up() { _Look(); }
 
-    private void _Look() { player.transform.LookAt(player.look); }
+    private void _Look() { player.playerScripts.transform.LookAt(player.look); }
 }

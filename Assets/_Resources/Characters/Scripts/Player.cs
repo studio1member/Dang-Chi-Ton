@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     public Rigidbody rb;
     public Animator anim;
     public LayerMask Enemy;
+    public Status status;
 
     public GameObject playerScripts;
     public PlayerCtrl playerCtrl;

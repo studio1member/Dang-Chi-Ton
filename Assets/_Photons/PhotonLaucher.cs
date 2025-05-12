@@ -32,5 +32,6 @@ public class PhotonLaucher : MonoBehaviourPunCallbacks
         GameObject player = PhotonNetwork.Instantiate(this.player.name, spawnPoint, Quaternion.identity);
         foreach (Transform i in player.transform) if (i.name == "Player Scripts") playerScripts = i.gameObject;
         playerScripts.SetActive(true);
+        player.GetComponent<Status>().enabled = true;
     }
 }

@@ -28,6 +28,7 @@ public class Status : MonoBehaviour
 
     [Header("Resistance Effect")]
     public float resistanceEffect = 0f;
+
     public virtual void Awake()
     {
         rb = GetComponent<Rigidbody>();

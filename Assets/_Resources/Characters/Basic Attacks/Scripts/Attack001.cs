@@ -13,6 +13,7 @@ public class Attack001 : AttackSystem
         foreach (RaycastHit hit in hits)
         {
             //hit.collider.GetComponent<Status>()._Dame_Receiver(player.status.Damage, true, transform, knockBack);
+            Debug.Log("hit");
         }
         base._Mouse_Left();
     }

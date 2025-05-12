@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 4637377939016285491}
   - component: {fileID: 748188049577532773}
   - component: {fileID: 798244548610999658}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Player Scripts
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69,6 +69,7 @@ Transform:
   - {fileID: 3108402146303106000}
   - {fileID: 2039708190180138807}
   - {fileID: 5638733866271205333}
+  - {fileID: 7556628606927342358}
   m_Father: {fileID: 8614186260823059628}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4637377939016285491
@@ -89,11 +90,12 @@ MonoBehaviour:
   Enemy:
     serializedVersion: 2
     m_Bits: 256
+  status: {fileID: 3031591849892552669}
   playerScripts: {fileID: 7973446928309249629}
   playerCtrl: {fileID: 748188049577532773}
   playerCamera: {fileID: 798244548610999658}
-  playerStatus: {fileID: 0}
-  attacksSystem: {fileID: 0}
+  playerStatus: {fileID: 3031591849892552669}
+  attacksSystem: {fileID: 2935787494930177256}
   zoom: 0
   cameraMain: {fileID: 2039708190180138807}
   look: {fileID: 7156325941462629994}
@@ -132,6 +134,7 @@ MonoBehaviour:
   player: {fileID: 4637377939016285491}
   directionCheck: 0.3
   jumpEffect: {fileID: 6905097757704565000}
+  posSkill: {fileID: 2143896251844355073}
 --- !u!114 &798244548610999658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,7 +166,7 @@ GameObject:
   - component: {fileID: 3640107416539143457}
   - component: {fileID: 858190291907647713}
   - component: {fileID: 1900392394864846639}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -254,6 +257,37 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!1 &1570726918758534085
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2143896251844355073}
+  m_Layer: 3
+  m_Name: skillPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2143896251844355073
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1570726918758534085}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 9.34}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8614186260823059628}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3473605826713546961
 GameObject:
   m_ObjectHideFlags: 0
@@ -297,7 +331,7 @@ GameObject:
   - component: {fileID: 3108402146303106000}
   - component: {fileID: 1789294423506820193}
   - component: {fileID: 9096760919832805392}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Check Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -394,7 +428,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6111005959169498387}
   serializedVersion: 8
-  lengthInSec: 1
+  lengthInSec: 0.5
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -5356,7 +5390,7 @@ GameObject:
   - component: {fileID: 5427390887423059289}
   - component: {fileID: 2262945753989187501}
   - component: {fileID: 3507773609445213986}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: MP Bar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5457,9 +5491,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6079239818833181387}
-  - {fileID: 7556628606927342358}
   - {fileID: 4967733154824130749}
   - {fileID: 3669800767018664957}
+  - {fileID: 2143896251844355073}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &9036011419589915389
@@ -5583,7 +5617,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7973446928309249629}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f3804f57a0854df4da0bb73525dd803a, type: 3}
   m_Name: 
@@ -5796,7 +5830,7 @@ GameObject:
   - component: {fileID: 6830101954228881245}
   - component: {fileID: 7687175711775087095}
   - component: {fileID: 5705376846320848340}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: HP Bar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5901,13 +5935,13 @@ GameObject:
   m_Component:
   - component: {fileID: 7556628606927342358}
   - component: {fileID: 2935787494930177256}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Attack001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7556628606927342358
 Transform:
   m_ObjectHideFlags: 0
@@ -5916,12 +5950,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9080981246051858244}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.329, z: 0.478}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.329, z: 0.47800064}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8614186260823059628}
+  m_Father: {fileID: 6079239818833181387}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2935787494930177256
 MonoBehaviour:
@@ -5935,7 +5969,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 936960c9efbcf0d45b1ede440be37c44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 4637377939016285491}
   radius: 0.7
   distance: 0
   knockBack: 5
