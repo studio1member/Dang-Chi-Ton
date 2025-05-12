@@ -80,7 +80,7 @@ public class PlayerCtrl : MonoBehaviour
     private void _Jump()
     {
         player.jumpContinuously -= 1;
-        Vector3 point = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
+        Vector3 point = new Vector3(transform.position.x, transform.position.y, transform.position.z);
         GameObject effect = Instantiate(jumpEffect, point, Quaternion.identity);
         effect.SetActive(true);
         Destroy(effect, 1f);
