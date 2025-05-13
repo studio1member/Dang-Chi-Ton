@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Get : MonoBehaviour
@@ -12,11 +13,25 @@ public class Get : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F) && car != null && !player.isGet)
         {
             player.isGet = true;
+            player.rb.isKinematic = true;
+            SwordMovement swordMovement = null;
+            if (swordMovement == null) swordMovement = car.GetComponent<SwordMovement>();
+            swordMovement.player = player;
+            swordMovement.rb.useGravity = false;
+            swordMovement.rb.drag = 5;
+            car.transform.rotation = Quaternion.identity;
             playerGet.transform.SetParent(car.transform);
-            playerGet.transform.position = new Vector3(0, 1, 0);
-        }else if (Input.GetKeyDown(KeyCode.F) && player.isGet)
+            playerGet.transform.position = new Vector3(car.transform.position.x, car.transform.position.y + 1, car.transform.position.z);
+        }
+        else if (Input.GetKeyDown(KeyCode.F) && player.isGet)
         {
             player.isGet = false;
+            player.rb.isKinematic = false;
+            SwordMovement swordMovement = null;
+            if (swordMovement == null) swordMovement = car.GetComponent<SwordMovement>();
+            swordMovement.player = null;
+            swordMovement.rb.useGravity = true;
+            swordMovement.rb.drag = 1;
             playerGet.transform.SetParent(null);
         }
     }

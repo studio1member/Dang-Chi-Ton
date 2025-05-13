@@ -15,7 +15,7 @@ public class PlayerCtrl : MonoBehaviour
     private Vector3 pos;
     private float speedSkill = 20f;
 
-    private float ver, hor;
+    public float ver, hor;
     private void Update()
     {
         _Ctrl();

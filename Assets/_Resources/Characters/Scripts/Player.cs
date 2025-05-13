@@ -26,6 +26,7 @@ public class Player : MonoBehaviour
     public Transform camera02;
     public Transform camera03;
     public Transform mainCamera;
+    public Transform lookSword;
 
     [Header("Sensitivity")]
     public float sensitivity;
