@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Photon.Realtime;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyCtrl : MonoBehaviour
 {

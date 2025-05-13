@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Photon.Realtime;
 using UnityEngine;
 
 public class PlayerCtrl : MonoBehaviour
@@ -25,6 +24,7 @@ public class PlayerCtrl : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        if (player.isGet) return;
         _Move();
         _Rotation();
         _Skill();
@@ -34,6 +34,7 @@ public class PlayerCtrl : MonoBehaviour
         ver = Input.GetAxis("Vertical");
         hor = Input.GetAxis("Horizontal");
 
+        if (player.isGet) return;
         if (Input.GetKeyDown(KeyCode.Space) && player.checkGround || Input.GetKeyDown(KeyCode.Space) && player.checkWall || Input.GetKeyDown(KeyCode.Space) && player.jumpContinuously > 1) _Jump();
         _Speed_Up();
 

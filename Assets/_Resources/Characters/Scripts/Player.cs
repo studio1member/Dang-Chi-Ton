@@ -31,6 +31,7 @@ public class Player : MonoBehaviour
     public float sensitivity;
 
     [Header("Move")]
+    public bool isGet = false;
     public bool checkGround;
     public bool checkWall;
     public float moveSpeedBasic = 5f;
