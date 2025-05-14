@@ -11,6 +11,7 @@ public class PlayerCamera : MonoBehaviour
     [SerializeField] private bool displayFix;
     [SerializeField] private float radiusFix = 0.5f;
     [SerializeField] private float directionFix;
+    private bool displayCursor = false;
 
     private void Start()
     {
@@ -20,9 +21,23 @@ public class PlayerCamera : MonoBehaviour
     }
     private void Update()
     {
+        _Cursor();
         _Camera_FL();
         _Camera_Move();
         _Fix_Camera();
+    }
+    private void _Cursor()
+    {
+        if (Input.GetKeyDown(KeyCode.BackQuote) && displayCursor)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            displayCursor = false;
+        }
+        else if (Input.GetKeyDown(KeyCode.BackQuote))
+        {
+            Cursor.lockState = CursorLockMode.None;
+            displayCursor = true;
+        }
     }
     private void _Camera_FL()
     {

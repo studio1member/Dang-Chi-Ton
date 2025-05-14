@@ -1,3 +1,4 @@
+using Photon.Realtime;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -6,7 +7,7 @@ using UnityEngine;
 public class Get : MonoBehaviour
 {
     [SerializeField] private Player player;
-    [SerializeField] private GameObject car, getButton, playerGet;
+    [SerializeField] private GameObject car, getButton;
 
     private void Update()
     {
@@ -20,8 +21,9 @@ public class Get : MonoBehaviour
             swordMovement.rb.useGravity = false;
             swordMovement.rb.drag = 5;
             car.transform.rotation = Quaternion.identity;
-            playerGet.transform.SetParent(car.transform);
-            playerGet.transform.position = new Vector3(car.transform.position.x, car.transform.position.y + 1, car.transform.position.z);
+            player.playerParent.rotation = Quaternion.identity;
+            player.playerParent.SetParent(car.transform);
+            player.playerParent.position = new Vector3(car.transform.position.x, car.transform.position.y + 1, car.transform.position.z);
         }
         else if (Input.GetKeyDown(KeyCode.F) && player.isGet)
         {
@@ -32,7 +34,7 @@ public class Get : MonoBehaviour
             swordMovement.player = null;
             swordMovement.rb.useGravity = true;
             swordMovement.rb.drag = 1;
-            playerGet.transform.SetParent(null);
+            player.playerParent.transform.SetParent(null);
         }
     }
     private void OnTriggerEnter(Collider other)

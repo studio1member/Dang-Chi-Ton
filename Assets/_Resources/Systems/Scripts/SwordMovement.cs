@@ -20,7 +20,6 @@ public class SwordMovement : MonoBehaviour
     }
     private void Move()
     {
-        player.transform.rotation = transform.rotation;
         transform.LookAt(player.lookSword);
         Vector3 move = player.playerCtrl.ver * transform.forward + player.playerCtrl.hor * transform.right;
         rb.AddForce(move.normalized * 1000f * speed * Time.deltaTime, ForceMode.Force);

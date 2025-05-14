@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
     public PlayerCamera playerCamera;
     public PlayerStatus playerStatus;
     public AttackSystem attacksSystem;
+    public Toolbar toolbar;
 
     [Header("Camera")]
     public bool zoom;
@@ -50,6 +51,10 @@ public class Player : MonoBehaviour
     public string moveAnim = "Move";
     public string jumpAnim = "Jump";
     public string attackAnim = "Attack01";
+
+    [Header("Body Part")]
+    public Transform rightHand;
+    public Transform leftHand;
 
     private void Awake()
     {
