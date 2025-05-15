@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class Toolbar : MonoBehaviour
 {
@@ -9,9 +10,19 @@ public class Toolbar : MonoBehaviour
     private int toolNum = 0;
 
     public Transform activate_tool_1, activate_tool_2, activate_tool_3;
+    private void Awake()
+    {
+        _Awake_Activate();
+    }
     private void Update()
     {
         _input();
+    }
+    private void _Awake_Activate()
+    {
+        if (activate_tool_1 == null) tool_1.gameObject.SetActive(false);
+        if (activate_tool_2 == null) tool_2.gameObject.SetActive(false);
+        if (activate_tool_3 == null) tool_3.gameObject.SetActive(false);
     }
     private void _input()
     {
@@ -77,19 +88,58 @@ public class Toolbar : MonoBehaviour
     public void _Set_Tool_1(Transform sword)
     {
         if (activate_tool_1 != null) Destroy(activate_tool_1.gameObject);
-        Transform swordIns = Instantiate(sword);
-        swordIns.SetParent(player.rightHand);
-        swordIns.localPosition = new Vector3(0, 0, 0);
-        swordIns.localRotation = Quaternion.identity;
-        swordIns.gameObject.SetActive(false);
-        activate_tool_1 = swordIns;
+        if (sword != null)
+        {
+            Transform swordIns = Instantiate(sword);
+            swordIns.SetParent(player.rightHand);
+            swordIns.localPosition = new Vector3(0, 0, 0);
+            swordIns.localRotation = Quaternion.identity;
+            activate_tool_1 = swordIns;
+            swordIns.gameObject.SetActive(false);
+            tool_1.gameObject.SetActive(true);
+        }
+        else
+        {
+            tool_1.gameObject.SetActive(false);
+            activate_tool_1 = null;
+        }
     }
     public void _Set_Tool_2(Transform skill)
     {
-
+        if (activate_tool_2 != null) Destroy(activate_tool_2.gameObject);
+        if (skill != null)
+        {
+            Transform swordIns = Instantiate(skill);
+            swordIns.SetParent(player.rightHand);
+            swordIns.localPosition = new Vector3(0, 0, 0);
+            swordIns.localRotation = Quaternion.identity;
+            activate_tool_2 = swordIns;
+            swordIns.gameObject.SetActive(false);
+            tool_2.gameObject.SetActive(true);
+        }
+        else
+        {
+            tool_2.gameObject.SetActive(false);
+            activate_tool_2 = null;
+        }
     }
     public void _Set_Tool_3(Transform sideSword)
     {
-
+        if (activate_tool_3 != null) Destroy(activate_tool_3.gameObject);
+        if (sideSword != null)
+        {
+            Transform swordIns = Instantiate(sideSword);
+            swordIns.SetParent(player.rightHand);
+            swordIns.localPosition = new Vector3(0, 0, 0);
+            swordIns.localRotation = Quaternion.identity;
+            activate_tool_3 = swordIns;
+            swordIns.gameObject.SetActive(false);
+            tool_3.gameObject.SetActive(true);
+        }
+        else
+        {
+            tool_3.gameObject.SetActive(false);
+            activate_tool_3 = null;
+        }
     }
 }

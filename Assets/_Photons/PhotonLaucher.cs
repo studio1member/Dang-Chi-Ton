@@ -29,7 +29,7 @@ public class PhotonLaucher : MonoBehaviourPunCallbacks
     {
         base.OnJoinedRoom();
         Debug.Log("Vào game");
-        GameObject player = PhotonNetwork.Instantiate(this.player.name, spawnPoint, Quaternion.identity);
+        GameObject player = PhotonNetwork.Instantiate("Prefab/Player/Player", spawnPoint, Quaternion.identity);
         foreach (Transform i in player.transform) if (i.name == "Player Scripts") playerScripts = i.gameObject;
         playerScripts.SetActive(true);
         player.GetComponent<Status>().enabled = true;
