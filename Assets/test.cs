@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class test : MonoBehaviour
 {
-    public Player player;
-    public Transform sword;
-    public void _Get_Sword()
+    [SerializeField] private PlayfabManager playfabManager;
+    [SerializeField] int coin;
+    public void _Add_Coin()
     {
-        player.toolbar._Set_Tool_1(sword);
+        playfabManager._Get_Coin(coin);
     }
 }
