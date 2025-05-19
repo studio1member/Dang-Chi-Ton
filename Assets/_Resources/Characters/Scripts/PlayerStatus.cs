@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class PlayerStatus : Status
 {
-    
+    public GameObject playerScript;
 }

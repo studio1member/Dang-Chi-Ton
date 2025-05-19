@@ -8,6 +8,6 @@ public class test : MonoBehaviour
     [SerializeField] int coin;
     public void _Add_Coin()
     {
-        playfabManager._Get_Coin(coin);
+        playfabManager._Add_Coin(5);
     }
 }

@@ -7,7 +7,6 @@ public class PhotonLaucher : MonoBehaviourPunCallbacks
 {
     [SerializeField] private Vector3 spawnPoint = new Vector3(0, 2, 0);
     [SerializeField] private GameObject player;
-    private GameObject playerScripts;
     private void Awake()
     {
         Debug.Log("Đang kết nối...");
@@ -30,8 +29,8 @@ public class PhotonLaucher : MonoBehaviourPunCallbacks
         base.OnJoinedRoom();
         Debug.Log("Vào game");
         GameObject player = PhotonNetwork.Instantiate("Prefabs/Player/Player", spawnPoint, Quaternion.identity);
-        foreach (Transform i in player.transform) if (i.name == "Player Scripts") playerScripts = i.gameObject;
-        playerScripts.SetActive(true);
+        player.GetComponent<Status>().enabled = true;
+        player.GetComponent<PlayerStatus>().playerScript.SetActive(true);
         player.GetComponent<Status>().enabled = true;
     }
 }

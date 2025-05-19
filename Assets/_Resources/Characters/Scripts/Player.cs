@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     public Animator anim;
     public LayerMask Enemy;
     public Status status;
+    public PlayfabManager playfabManager;
 
     public GameObject playerScripts;
     public PlayerCtrl playerCtrl;
@@ -57,7 +58,7 @@ public class Player : MonoBehaviour
     public Transform leftHand;
 
     [Header("Inventory")]
-    public Transform inventory;
+    public Transform inventory_Button;
     private void Awake()
     {
         moveSpeed = moveSpeedBasic;

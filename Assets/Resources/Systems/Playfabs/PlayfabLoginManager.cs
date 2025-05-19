@@ -37,7 +37,7 @@ public class PlayfabLoginManager : MonoBehaviour
             Email = email_Input.text,
             Password = password_Input.text,
         };
-        PlayFabClientAPI.LoginWithEmailAddress(request, OnLoginSuccess, OnError);
+        PlayFabClientAPI.LoginWithEmailAddress(request, OnLoginSuccess, error => OnError(error, "login"));
     }
     void OnLoginSuccess (LoginResult result)
     {
@@ -56,7 +56,7 @@ public class PlayfabLoginManager : MonoBehaviour
             Password = password_Input.text,
             RequireBothUsernameAndEmail = false
         };
-        PlayFabClientAPI.RegisterPlayFabUser(request, OnRegisterSuccess, OnError);
+        PlayFabClientAPI.RegisterPlayFabUser(request, OnRegisterSuccess, error => OnError(error, "register"));
     }
     void OnRegisterSuccess(RegisterPlayFabUserResult result)
     {
@@ -69,14 +69,28 @@ public class PlayfabLoginManager : MonoBehaviour
             Email = email_Input.text,
             TitleId = "157331"
         };
-        PlayFabClientAPI.SendAccountRecoveryEmail(request, OnPasswordReset, OnError);
+        PlayFabClientAPI.SendAccountRecoveryEmail(request, OnPasswordReset, error => OnError(error, "reset"));
     }
     void OnPasswordReset (SendAccountRecoveryEmailResult result)
     {
-
+        message_Text.text = "Đã gửi thông báo quên mật khẩu đến Email của bạn, vui lòng kiểm tra !";
     }
-    private void OnError(PlayFabError error)
+    private void OnError(PlayFabError error, string context)
     {
-
+        switch (context)
+        {
+            case "register":
+                message_Text.text = "Gmail này đã được sử dụng: " + error.ErrorMessage;
+                break;
+            case "login":
+                message_Text.text = "Sai mật khẩu hoặc tài khoản: " + error.ErrorMessage;
+                break;
+            case "reset":
+                message_Text.text = "Không tìm thấy tài khoản đã đăng kí bằng Gmail này: " + error.ErrorMessage;
+                break;
+            default:
+                message_Text.text = "Lỗi không xác định: " + error.ErrorMessage;
+                break;
+        }
     }
 }
