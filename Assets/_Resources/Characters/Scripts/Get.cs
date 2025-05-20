@@ -11,6 +11,10 @@ public class Get : MonoBehaviour
 
     private void Update()
     {
+        _Get_Car();
+    }
+    private void _Get_Car()
+    {
         if (Input.GetKeyDown(KeyCode.F) && car != null && !player.isGet)
         {
             player.isGet = true;
@@ -37,12 +41,23 @@ public class Get : MonoBehaviour
             player.playerParent.transform.SetParent(null);
         }
     }
+    private void _Get_Item_Shop()
+    {
+
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Get"))
         {
             car = other.gameObject;
             getButton.SetActive(true);
+        }
+        if (other.gameObject.CompareTag("Shop"))
+        {
+            other.GetComponent<SwordShop>()._Item_Sell(player);
+            this.player.inventory_Button._Turn_Off_Panel();
+            this.player.inventory_Button.shop_Panel.gameObject.SetActive(true);
+            this.player.inventory_Button.gameObject.SetActive(false);
         }
     }
     private void OnTriggerExit(Collider other)
@@ -51,6 +66,11 @@ public class Get : MonoBehaviour
         {
             car = null;
             getButton.SetActive(false);
+        }
+        if (other.gameObject.CompareTag("Shop"))
+        {
+            this.player.inventory_Button.shop_Panel.gameObject.SetActive(false);
+            this.player.inventory_Button.gameObject.SetActive(true);
         }
     }
 }

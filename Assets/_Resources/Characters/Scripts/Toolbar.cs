@@ -85,7 +85,7 @@ public class Toolbar : MonoBehaviour
             activate_tool_3.gameObject.SetActive(true);
         }
     }
-    public void _Set_Tool_1(Transform sword)
+    public void _Set_Sword(Transform sword)
     {
         if (activate_tool_1 != null) Destroy(activate_tool_1.gameObject);
         if (sword != null)
@@ -102,44 +102,6 @@ public class Toolbar : MonoBehaviour
         {
             tool_1.gameObject.SetActive(false);
             activate_tool_1 = null;
-        }
-    }
-    public void _Set_Tool_2(Transform skill)
-    {
-        if (activate_tool_2 != null) Destroy(activate_tool_2.gameObject);
-        if (skill != null)
-        {
-            Transform swordIns = Instantiate(skill);
-            swordIns.SetParent(player.rightHand);
-            swordIns.localPosition = new Vector3(0, 0, 0);
-            swordIns.localRotation = Quaternion.identity;
-            activate_tool_2 = swordIns;
-            swordIns.gameObject.SetActive(false);
-            tool_2.gameObject.SetActive(true);
-        }
-        else
-        {
-            tool_2.gameObject.SetActive(false);
-            activate_tool_2 = null;
-        }
-    }
-    public void _Set_Tool_3(Transform sideSword)
-    {
-        if (activate_tool_3 != null) Destroy(activate_tool_3.gameObject);
-        if (sideSword != null)
-        {
-            Transform swordIns = Instantiate(sideSword);
-            swordIns.SetParent(player.rightHand);
-            swordIns.localPosition = new Vector3(0, 0, 0);
-            swordIns.localRotation = Quaternion.identity;
-            activate_tool_3 = swordIns;
-            swordIns.gameObject.SetActive(false);
-            tool_3.gameObject.SetActive(true);
-        }
-        else
-        {
-            tool_3.gameObject.SetActive(false);
-            activate_tool_3 = null;
         }
     }
 }

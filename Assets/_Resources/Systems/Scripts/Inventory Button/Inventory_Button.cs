@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Inventory_Button : MonoBehaviour
 {
-    public Transform list_Inventory_Panel, profile_Panel, inventory_Panel, setting_Panel, shop_Panel, buyding_Panel, typesOfMoney_Panel;
+    public Transform list_Inventory_Panel, profile_Panel, inventory_Panel, setting_Panel, typesOfMoney_Panel, shop_Panel, shopItem_Panel;
+    public Button item_Prefab;
     [SerializeField] private Player player;
     public void _List_Inventory_Button()
     {
@@ -34,7 +36,7 @@ public class Inventory_Button : MonoBehaviour
         else setting_Panel.gameObject.SetActive(true);
         _On_Update_Coin();
     }
-    private void _Turn_Off_Panel()
+    public void _Turn_Off_Panel()
     {
         player.playfabManager._Update_Coin();
         if (profile_Panel.gameObject.activeSelf) profile_Panel.gameObject.SetActive(false);
@@ -43,7 +45,7 @@ public class Inventory_Button : MonoBehaviour
     }
     private void _On_Update_Coin()
     {
-        if (list_Inventory_Panel.gameObject.activeSelf) typesOfMoney_Panel.gameObject.SetActive(true);
-        else typesOfMoney_Panel.gameObject.SetActive(false);
+        if (list_Inventory_Panel.gameObject.activeSelf) { typesOfMoney_Panel.gameObject.SetActive(true); this.player.isGet = true; }
+        else { typesOfMoney_Panel.gameObject.SetActive(false); this.player.isGet = false; }
     }
 }

@@ -58,14 +58,11 @@ public class Player : MonoBehaviour
     public Transform leftHand;
 
     [Header("Inventory")]
-    public Transform inventory_Button;
+    public Inventory_Button inventory_Button;
+    public Transform listInventory_Panel;
+
     private void Awake()
     {
         moveSpeed = moveSpeedBasic;
-    }
-    public void _Add_Item(Transform item)
-    {
-        Transform itemIns = Instantiate(item);
-        itemIns.SetParent(inventory);
     }
 }
