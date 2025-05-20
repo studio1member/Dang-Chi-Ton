@@ -10,14 +10,14 @@ GameObject:
   m_Component:
   - component: {fileID: 1197501269088717319}
   - component: {fileID: 7582619779171693407}
-  - component: {fileID: 4756338762114983949}
+  - component: {fileID: 8866256247263756105}
   m_Layer: 0
   m_Name: 101001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1197501269088717319
 Transform:
   m_ObjectHideFlags: 0
@@ -42,7 +42,7 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2087118709577785411}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &4756338762114983949
+--- !u!114 &8866256247263756105
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -51,12 +51,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2087118709577785411}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 061201aaa9c2b79438d1acbdf99e43bc, type: 3}
+  m_Script: {fileID: 11500000, guid: 76af1f206afbcbf49bf68649736477ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Icon: {fileID: 21300000, guid: 48c7e2fa6e4da314e8645fa4fae812a6, type: 3}
-  SellingPrice: 500
-  Damage: 20
+  sprite: {fileID: 21300000, guid: 48c7e2fa6e4da314e8645fa4fae812a6, type: 3}
+  sellingPrice: 500
+  damage: 50
+  rangeAttack: 5
 --- !u!1001 &8232177212662658616
 PrefabInstance:
   m_ObjectHideFlags: 0

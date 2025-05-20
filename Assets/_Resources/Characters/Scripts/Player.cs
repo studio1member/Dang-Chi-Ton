@@ -18,7 +18,6 @@ public class Player : MonoBehaviour
     public PlayerCamera playerCamera;
     public PlayerStatus playerStatus;
     public AttackSystem attacksSystem;
-    public Toolbar toolbar;
 
     [Header("Camera")]
     public bool zoom;

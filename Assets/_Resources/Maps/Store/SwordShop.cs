@@ -12,14 +12,9 @@ public class SwordShop : MonoBehaviour
         for (int i = 0; i < idItem.Count; i++)
         {
             Button item = Instantiate(player.inventory_Button.item_Prefab);
+            item.gameObject.SetActive(true);
             item.transform.SetParent(player.inventory_Button.shopItem_Panel);
-
-            Sprite sprite = Resources.Load<Sprite>("Icons/" + idItem[i].ToString());
-            item.image.sprite = sprite;
-
-            Buy buy = item.GetComponent<Buy>();
-            buy.itemSell = Resources.Load<GameObject>("Prefabs/Items/" + idItem[i].ToString());
-            buy.icon = sprite;
+            item.GetComponent<ItemPrefab>()._Getcomponent_Item(Resources.Load<GameObject>("Prefabs/Items/" + idItem[i].ToString()), player, Resources.Load<Sprite>("Prefabs/Items/" + idItem[i].ToString()));
         }
     }
 }
