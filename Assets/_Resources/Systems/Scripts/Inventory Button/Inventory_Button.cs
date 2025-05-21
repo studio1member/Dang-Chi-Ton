@@ -7,13 +7,6 @@ public class Inventory_Button : MonoBehaviour
 {
     public Transform list_Inventory_Panel, profile_Panel, inventory_Panel, setting_Panel, typesOfMoney_Panel;
     public Button item_Prefab;
-    [Header("Shop")]
-    public Transform shop_Panel;
-    public Transform shopItem_Panel;
-
-    [Header("Buyding Panel")]
-    public Text sellingPrice_Text;
-    public Image icon;
 
     [SerializeField] private Player player;
     public void _List_Inventory_Button()

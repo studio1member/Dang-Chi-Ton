@@ -56,7 +56,7 @@ public class Get : MonoBehaviour
         {
             other.GetComponent<SwordShop>()._Item_Sell(player);
             this.player.inventory_Button._Turn_Off_Panel();
-            this.player.inventory_Button.shop_Panel.gameObject.SetActive(true);
+            this.player.shop_Panel.gameObject.SetActive(true);
             this.player.inventory_Button.gameObject.SetActive(false);
         }
     }
@@ -69,7 +69,7 @@ public class Get : MonoBehaviour
         }
         if (other.gameObject.CompareTag("Shop"))
         {
-            this.player.inventory_Button.shop_Panel.gameObject.SetActive(false);
+            this.player.shop_Panel.gameObject.SetActive(false);
             this.player.inventory_Button.gameObject.SetActive(true);
         }
     }

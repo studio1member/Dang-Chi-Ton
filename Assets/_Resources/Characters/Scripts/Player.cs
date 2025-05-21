@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Linq;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -59,6 +59,15 @@ public class Player : MonoBehaviour
     [Header("Inventory")]
     public Inventory_Button inventory_Button;
     public Transform listInventory_Panel;
+    public Transform itemsInInventory_Panel;
+
+    [Header("Shop")]
+    public Transform shop_Panel;
+    public Transform shopItem_Panel;
+
+    [Header("Buyding Panel")]
+    public Text sellingPrice_Text;
+    public Image icon;
 
     private void Awake()
     {

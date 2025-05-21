@@ -168,7 +168,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3091487181342263934
 RectTransform:
   m_ObjectHideFlags: 0
@@ -292,6 +292,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abd2b44148756654dabec2549b6578f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  item: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &1105551057321308947
 GameObject:
   m_ObjectHideFlags: 0
@@ -420,6 +422,11 @@ MonoBehaviour:
   leftHand: {fileID: 1821199523287327381}
   inventory_Button: {fileID: 1038925191551701000}
   listInventory_Panel: {fileID: 8225693382952559184}
+  itemsInInventory_Panel: {fileID: 6785546219288091622}
+  shop_Panel: {fileID: 3091487181342263934}
+  shopItem_Panel: {fileID: 7243623407582560262}
+  sellingPrice_Text: {fileID: 4373310801589158811}
+  icon: {fileID: 1096252042931562617}
 --- !u!114 &748188049577532773
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1544,10 +1551,6 @@ MonoBehaviour:
   setting_Panel: {fileID: 8255309097127524086}
   typesOfMoney_Panel: {fileID: 8598021190987892088}
   item_Prefab: {fileID: 7987667804582077698}
-  shop_Panel: {fileID: 3091487181342263934}
-  shopItem_Panel: {fileID: 7243623407582560262}
-  sellingPrice_Text: {fileID: 4373310801589158811}
-  icon: {fileID: 1096252042931562617}
   player: {fileID: 4637377939016285491}
 --- !u!1 &4158428028679433344
 GameObject:
@@ -1773,7 +1776,7 @@ GameObject:
   - component: {fileID: 9152829595391520872}
   - component: {fileID: 1154559611749371797}
   m_Layer: 0
-  m_Name: Items Panel
+  m_Name: Items In Inventory Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

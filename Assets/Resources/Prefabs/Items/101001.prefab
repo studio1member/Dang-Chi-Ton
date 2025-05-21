@@ -54,7 +54,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76af1f206afbcbf49bf68649736477ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 48c7e2fa6e4da314e8645fa4fae812a6, type: 3}
+  sprite: {fileID: 0}
   sellingPrice: 500
   damage: 50
   rangeAttack: 5
