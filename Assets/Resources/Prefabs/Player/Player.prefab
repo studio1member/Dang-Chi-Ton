@@ -683,7 +683,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fc6827a95681614a90a0fbbc214def9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DeviceSprite: {fileID: 580093991, guid: 852661cd2a9fda84790763a21fd19d34, type: 3}
+  Device_Button: {fileID: 5110190471779973921}
+  Mobile_Sprite: {fileID: 580093991, guid: 852661cd2a9fda84790763a21fd19d34, type: 3}
+  PC_Sprite: {fileID: 985002507, guid: 852661cd2a9fda84790763a21fd19d34, type: 3}
 --- !u!1 &1463962819435487047
 GameObject:
   m_ObjectHideFlags: 0
@@ -8179,9 +8181,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2980466786874390492}
-        m_TargetAssemblyTypeName: SettingPanel, Assembly-CSharp
-        m_MethodName: _Device
+      - m_Target: {fileID: 3748595070510509937}
+        m_TargetAssemblyTypeName: CtrlSettingPanel, Assembly-CSharp
+        m_MethodName: _Press_Device
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9687,13 +9689,14 @@ GameObject:
   - component: {fileID: 3531706171059680146}
   - component: {fileID: 8505597640878889548}
   - component: {fileID: 5402060411907530301}
+  - component: {fileID: 3748595070510509937}
   m_Layer: 0
   m_Name: Setting Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &8255309097127524086
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9773,6 +9776,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3748595070510509937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9186630304301732748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d87a3ec7f2c66f4aa90df65a1adba00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  settingPanel: {fileID: 2980466786874390492}
 --- !u!1001 &4862294983128151894
 PrefabInstance:
   m_ObjectHideFlags: 0
