@@ -6,7 +6,7 @@ public class PlayerCtrl : MonoBehaviour
 {
     [SerializeField] private Player player;
     [Header("Check Ground")]
-    [SerializeField] private float directionCheck = 0.3f;
+    private float directionCheck = 0.3f;
     [SerializeField] private GameObject jumpEffect;
     private float timerDelayAnimJump;
 
@@ -16,6 +16,10 @@ public class PlayerCtrl : MonoBehaviour
     private float speedSkill = 20f;
 
     public float ver, hor;
+    private void Start()
+    {
+        this.player.moveSpeed = this.player.moveSpeedBasic;
+    }
     private void Update()
     {
         _Ctrl();

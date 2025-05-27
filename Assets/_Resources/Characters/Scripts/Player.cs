@@ -68,9 +68,4 @@ public class Player : MonoBehaviour
     [Header("Buyding Panel")]
     public Text sellingPrice_Text;
     public Image icon;
-
-    private void Awake()
-    {
-        moveSpeed = moveSpeedBasic;
-    }
 }

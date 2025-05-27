@@ -4,18 +4,12 @@ using UnityEngine;
 
 public class PlayerCamera : MonoBehaviour
 {
-    private Player player;
+    [SerializeField] private Player player;
     [SerializeField] private float mouseX, mouseY, rotationX, rotationY;
-
-    [Header("Fix Camera")]
-    [SerializeField] private bool displayFix;
-    [SerializeField] private float radiusFix = 0.5f;
-    [SerializeField] private float directionFix;
     private bool displayCursor = false;
 
     private void Start()
     {
-        player = GetComponent<Player>();
         player.cameraMain.SetParent(null);
         Cursor.lockState = CursorLockMode.Locked;
     }
@@ -24,7 +18,6 @@ public class PlayerCamera : MonoBehaviour
         _Cursor();
         _Camera_FL();
         _Camera_Move();
-        _Fix_Camera();
     }
     private void _Cursor()
     {
@@ -41,7 +34,16 @@ public class PlayerCamera : MonoBehaviour
     }
     private void _Camera_FL()
     {
-        player.cameraMain.position = transform.position;
+        this.player.cameraMain.position = this.player.transform.position;
+        if(Physics.Raycast(this.player.camera02.position, -this.player.camera02.forward,out RaycastHit hit, 5f))
+        {
+            //Vector3 pos = new Vector3(hit.point.x, hit.point.y, hit.point.z + 1f);
+            this.player.camera03.position = hit.point;
+        }
+        else
+        {
+            this.player.camera03.localPosition = new Vector3(0, 0, this.player.camera02.localPosition.z - 4f);
+        }
     }
     private void _Camera_Move()
     {
@@ -52,21 +54,5 @@ public class PlayerCamera : MonoBehaviour
 
         player.cameraMain.localRotation = Quaternion.Euler(0, rotationY, 0);
         player.camera01.localRotation = Quaternion.Euler(rotationX, 0, 0);
-    }
-    private void _Fix_Camera()
-    {
-        //if (Physics.SphereCast(player.camera03.position, radiusFix, Vector3.down, out RaycastHit hit , directionFix, player.layerGround))
-        //{
-        //    Debug.Log("Error");
-        //}
-        
-    }
-    private void OnDrawGizmos()
-    {
-        if(displayFix)
-        {
-            Gizmos.DrawWireSphere(player.camera03.position, radiusFix);
-            Gizmos.DrawLine(player.camera03.position, player.camera03.position + Vector3.down * directionFix);
-        }
     }
 }
