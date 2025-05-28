@@ -25,7 +25,7 @@ public class PlayerCamera : MonoBehaviour
         _Camera_FL();
         _Camera_Move();
     }
-    public void _Camera_Reset() { this.DistanceCamera = 4f; this.PosCamera = new Vector3(0.5f, 1f, 0); }
+    public void _Camera_Reset() { this.DistanceCamera = 4f; this.PosCamera = new Vector3(0.5f, 0, 0); }
     public void _Camera_FPS() { this.DistanceCamera = 0f; this.PosCamera = new Vector3(0, 0, 0); }
     private void _Cursor()
     {

@@ -10635,7 +10635,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a1053db49e8581c44ba6e6d1efbfe6f7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4184286267717431108}
   m_SourcePrefab: {fileID: 100100000, guid: a1053db49e8581c44ba6e6d1efbfe6f7, type: 3}
 --- !u!95 &1301753801396767431 stripped
 Animator:
@@ -10652,6 +10655,41 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a1053db49e8581c44ba6e6d1efbfe6f7, type: 3}
   m_PrefabInstance: {fileID: 4862294983128151894}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5745254294811658759 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a1053db49e8581c44ba6e6d1efbfe6f7, type: 3}
+  m_PrefabInstance: {fileID: 4862294983128151894}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4184286267717431108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5745254294811658759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowLayerWeightsInspector: 1
+  ShowParameterInspector: 1
+  m_SynchronizeParameters:
+  - Type: 1
+    SynchronizeType: 2
+    Name: Move
+  - Type: 9
+    SynchronizeType: 0
+    Name: Attack01
+  - Type: 9
+    SynchronizeType: 0
+    Name: Skill001
+  - Type: 4
+    SynchronizeType: 1
+    Name: Jump
+  m_SynchronizeLayers:
+  - SynchronizeType: 0
+    LayerIndex: 0
 --- !u!4 &6543725090783070366 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1852576806548013000, guid: a1053db49e8581c44ba6e6d1efbfe6f7, type: 3}
