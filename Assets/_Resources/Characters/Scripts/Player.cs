@@ -16,7 +16,6 @@ public class Player : MonoBehaviour
     public GameObject playerScripts;
     public PlayerCtrl playerCtrl;
     public PlayerCamera playerCamera;
-    public PlayerStatus playerStatus;
     public AttackSystem attacksSystem;
 
     [Header("Camera")]
@@ -30,7 +29,7 @@ public class Player : MonoBehaviour
     public Transform lookSword;
 
     [Header("Sensitivity")]
-    public float sensitivity;
+    public float sensitivity = 50f;
 
     [Header("Move")]
     public bool isGet = false;

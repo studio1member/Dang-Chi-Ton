@@ -9,11 +9,23 @@ public class Inventory_Button : MonoBehaviour
     public Button item_Prefab;
 
     [SerializeField] private Player player;
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.B)) _List_Inventory_Button();
+    }
     public void _List_Inventory_Button()
     {
         _Turn_Off_Panel();
-        if (list_Inventory_Panel.gameObject.activeSelf) list_Inventory_Panel.gameObject.SetActive(false);
-        else list_Inventory_Panel.gameObject.SetActive(true);
+        if (list_Inventory_Panel.gameObject.activeSelf)
+        {
+            list_Inventory_Panel.gameObject.SetActive(false);
+            this.player.playerCamera._Camera_Reset();
+        }
+        else
+        {
+            list_Inventory_Panel.gameObject.SetActive(true);
+            this.player.playerCamera._Camera_FPS();
+        }
         _On_Update_Coin();
     }
     public void _Profile_Button()
