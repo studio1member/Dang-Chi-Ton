@@ -54,6 +54,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76af1f206afbcbf49bf68649736477ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Name: "Ki\u1EBFm n\xE8"
+  Info: "C\xF3 c\xF3 s\xE1t th\u01B0\u01A1ng cao v\xE3i nh\u01B0ng \u0111\xE1nh ch\u1EADm"
   sprite: {fileID: 0}
   sellingPrice: 500
   damage: 50

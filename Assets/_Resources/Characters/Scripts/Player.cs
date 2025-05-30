@@ -5,18 +5,25 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-    [Header("Component")]
     public Transform playerParent;
     public Rigidbody rb;
     public Animator anim;
     public LayerMask Enemy;
-    public Status status;
+
+    [Header("Scripts")]
+    public PlayerStatus playerStatus;
     public PlayfabManager playfabManager;
+    public PlayerPhoton playerPhoton;
+    public PlayerEvasionSkill playerEvasionSkill;
 
     public GameObject playerScripts;
     public PlayerCtrl playerCtrl;
     public PlayerCamera playerCamera;
     public AttackSystem attacksSystem;
+
+    [Header("UI")]
+    public UiInventory uiInventory;
+    public UiShop uiShop;
 
     [Header("Camera")]
     public bool zoom;
@@ -35,16 +42,11 @@ public class Player : MonoBehaviour
     public bool isGet = false;
     public bool checkGround;
     public bool checkWall;
-    public float moveSpeedBasic = 5f;
-    public float moveSpeeMax = 10;
-    public float moveSpeed;
     public float air = 0.3f;
     public float drag = 5f;
 
     [Header("Jump")]
     public LayerMask layerGround;
-    public int jumpContinuously = 10;
-    public float jumpForce = 6f;
 
     [Header("Animation")]
     public string moveAnim = "Move";
@@ -60,11 +62,9 @@ public class Player : MonoBehaviour
     public Transform listInventory_Panel;
     public Transform itemsInInventory_Panel;
 
-    [Header("Shop")]
-    public Transform shop_Panel;
-    public Transform shopItem_Panel;
-
-    [Header("Buyding Panel")]
-    public Text sellingPrice_Text;
-    public Image icon;
+    private void Awake()
+    {
+        if (playerStatus == null) playerStatus = transform.root.GetComponent<PlayerStatus>();
+        if (playerEvasionSkill == null) playerEvasionSkill = transform.GetComponent<PlayerEvasionSkill>();
+    }
 }

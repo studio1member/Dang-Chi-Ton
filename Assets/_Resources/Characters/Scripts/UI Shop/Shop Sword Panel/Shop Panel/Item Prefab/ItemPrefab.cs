@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor.UI;
 
 public class ItemPrefab : MonoBehaviour
 {
@@ -16,7 +17,6 @@ public class ItemPrefab : MonoBehaviour
     public void _Click_Buy_Item()
     {
         if (this.player == null) return;
-        this.player.icon.sprite = sprite;
-        this.player.sellingPrice_Text.text = item.GetComponent<SwordItem>().sellingPrice.ToString() + ".TCĐ";
+        this.player.uiShop.shopSwordPanel._Display(this.sprite, this.item.GetComponent<SwordItem>().ToString() + ".TCĐ");
     }
 }
