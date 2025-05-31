@@ -57,7 +57,7 @@ public class Status : MonoBehaviour
     {
         if(hpCurrent < hpMax)
         {
-            hpBar.fillAmount = (hpCurrent / hpMax) / 2.5f;
+            hpBar.fillAmount = hpCurrent / hpMax;
             hpCurrent += (hpMax / 90) * Time.deltaTime;
             if (hpCurrent > hpMax) hpCurrent = hpMax;
         }
@@ -66,7 +66,7 @@ public class Status : MonoBehaviour
     {
         if (mpCurrent < mpMax)
         {
-            mpBar.fillAmount = (mpCurrent / mpMax) / 2.5f;
+            mpBar.fillAmount = (mpCurrent / mpMax) * 0.85f;
             mpCurrent += (mpMax / 5) * Time.deltaTime;
             if (mpCurrent > mpMax) mpCurrent = mpMax;
         }
